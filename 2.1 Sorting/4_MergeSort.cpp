@@ -10,16 +10,23 @@ void print(vector<int> v)
 
 void merge(vector<int> &v, int l, int mid, int r)
 {
-    vector<int> temp(r,INT_MIN);
     int i=l;
     int j=mid+1;
-    int k = l;
-
-    while(i<=mid && j<=r)temp[k++] = v[i]<v[j]? v[i++]: v[j++];
-    while(i<=mid)temp[k++]=v[i++];
-    while(j<=r)temp[k++]=v[j++];
+    int k=0;
     
-    for(int x = l; x<=r; x++)v[x]=temp[x];
+    vector<int> temp;
+    
+    while(i<=mid && j<=r)
+    {
+        if(v[i]<=v[j])temp.push_back(v[i++]);
+        else if(v[i]>v[j])temp.push_back(v[j++]);
+
+    }
+    
+    while(i<=mid)temp.push_back(v[i++]);
+    while(j<=r)temp.push_back(v[j++]);
+    
+    for(int x=0; x<temp.size(); x++)v[x+l]=temp[x];
     
 }
 
