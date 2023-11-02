@@ -36,7 +36,18 @@ vector<int> nextGreaterPermutation(vector<int> &A) {
     reverse(A.begin()+ind+1,A.end());
 
     return A;
-
-
-
 }
+
+
+/*
+You are given an array ‘a’ of ‘n’ integers. You have to return the lexicographically next to greater permutation.
+Example:
+
+Input: 'a' = [1, 3, 2]
+
+Output: 2 1 3
+
+Explanation: All the permutations of [1, 2, 3] are [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1], ]. Hence the next greater permutation of [1, 3, 2] is [2, 1, 3].
+
+
+*/
